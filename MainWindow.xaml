@@ -1,0 +1,79 @@
+﻿<Window x:Class="FramelessWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wpf="clr-namespace:Meta.Vlc.Wpf;assembly=Meta.Vlc.Wpf"
+        xmlns:i="clr-namespace:FramelessWPF"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="" SnapsToDevicePixels="True" 
+        BorderThickness="0" BorderBrush="#FF007ACC" 
+        Height="768" Width="1024" Style="{StaticResource MainWindowStyle}" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="Black" x:Name="LayoutParent">
+        <Grid.Resources>
+            <x:Array Type="{x:Type system:String}" x:Key="VlcOptions">
+                <system:String>-I</system:String>
+                <system:String>--dummy-quiet</system:String>
+                <system:String>--ignore-config</system:String>
+                <system:String>--no-video-title</system:String>
+                <system:String>--no-sub-autodetect-file</system:String>
+            </x:Array>
+        </Grid.Resources>
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem x:Name="LoadFileMenuItem" Header="打开文件" Click="LoadFileMenuItem_Click"/>
+                <MenuItem x:Name="StopMenuItem" Header="停止播放" Click="StopMenuItem_Click"/>
+                <Separator/>
+                <MenuItem x:Name="CloseMenuItem" Header="退出" Click="CloseMenuItem_Click"/>
+            </ContextMenu>
+        </Grid.ContextMenu>
+
+        <wpf:VlcPlayer x:Name="Player" VlcOption="{StaticResource VlcOptions}" LibVlcPath="..\..\libvlc" EndBehavior="Nothing" Stretch="Fill" />
+        
+        <Grid VerticalAlignment="Bottom" Background="#FF171717">
+            <Grid.RowDefinitions>
+                <RowDefinition MinHeight="50" MaxHeight="50"/>
+                <RowDefinition MinHeight="30" MaxHeight="30"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="Top" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Slider x:Name="VolumeSlider" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" MinWidth="160" Value="{Binding Volume, ElementName=Player}" Foreground="White"></Slider>
+                <Button x:Name="PlayButton" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" MinHeight="40" MinWidth="60" Foreground="#99000000" Background="{x:Null}" BorderBrush="{x:Null}" Click="PlayButton_Click">
+                    <materialDesign:PackIcon x:Name="PlayIcon" Kind="Play" Foreground="White" Height="35" Width="50" MouseEnter="PlayIcon_MouseEnter" MouseLeave="PlayIcon_MouseLeave"/>
+                </Button>
+                <Button x:Name="ToogleFullScreenButton" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0" MinHeight="40" MinWidth="40" Foreground="#99000000" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <materialDesign:PackIcon x:Name="ToogleFullScreenIcon" Kind="ArrowExpand" Foreground="White" Height="25" Width="25" MouseEnter="ToogleFullScreenIcon_MouseEnter" MouseLeave="ToogleFullScreenIcon_MouseLeave"/>
+                </Button>
+                
+            </Grid>
+
+            <Grid x:Name="Bottom" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="50"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition MaxWidth="50"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="CurrentTimeLabel" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+                <Slider x:Name="ProgressSlider" Grid.Column="1" VerticalAlignment="Center" Value="{Binding Position, ElementName=Player}"  Maximum="1" SmallChange="0.00001" Foreground="White"></Slider>
+                <Label x:Name="LeftTimeLabel" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

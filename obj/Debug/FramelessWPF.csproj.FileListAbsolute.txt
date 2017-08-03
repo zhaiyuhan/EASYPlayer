@@ -1,0 +1,17 @@
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\bin\Debug\FramelessWPF.exe.config
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\bin\Debug\FramelessWPF.exe
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\bin\Debug\FramelessWPF.pdb
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\FramelessWPF.csprojResolveAssemblyReference.cache
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\CaptionButtons.baml
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\CaptionButtons.g.cs
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\MainWindow.g.cs
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\App.g.cs
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\FramelessWPF_MarkupCompile.cache
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\FramelessWPF_MarkupCompile.lref
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\App.baml
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\Generic.baml
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\MainWindow.baml
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\FramelessWPF.g.resources
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\FramelessWPF.exe
+C:\Users\ZhaiChangtui\Desktop\EASYPlayer\obj\Debug\FramelessWPF.pdb
